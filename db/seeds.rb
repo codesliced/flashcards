@@ -1,11 +1,11 @@
 require 'csv'
 
-files = ["drivered.csv", "movies.csv", "pop_music.csv", "videogames.csv"]
+files = ["drivered", "movies", "pop_music", "videogames"]
 
 files.each do |file|
-  CSV.foreach(File.expand_path("db/csv/#{file}"), 'r') do |line|
+  CSV.foreach(File.expand_path("db/csv/#{file}.csv"), 'r') do |line|
     begin
-      puts line
+      Card.new
     rescue
       puts "problem"
     end
