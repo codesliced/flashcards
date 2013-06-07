@@ -5,4 +5,5 @@ class Deck < ActiveRecord::Base
   def self.get_all_decks
     self.all
   end
+
 end
