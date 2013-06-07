@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+    validates :first_name, :last_name, :password, :email, :presence => :true
+    validates :email, :uniqueness => :true
+    validates :password, :length => { :minimum => 6 }
+
 
   def self.authenticate(params)
     user = User.find_by_email(params[:email])

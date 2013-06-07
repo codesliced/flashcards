@@ -1,7 +1,12 @@
 post '/create_user' do
-  new_user = User.create(params[:user])
-  session[:user_id] = new_user.id
-  redirect '/'
+  new_user = User.new(params[:user])
+  if new_user.save 
+    session[:user_id] = new_user.id
+    redirect '/'
+  else
+    @errors = new_user.errors
+    erb :login
+  end
 
 end
 
@@ -15,7 +20,8 @@ post '/login' do
      session[:user_id] = @user.id
     redirect to '/'
   else
-    redirect to '/'
+    @errors = { login_error: "Invalid Login"}
+    erb :login
   end
 end
 

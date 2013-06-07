@@ -1,4 +1,8 @@
 <div class="container">
+   <% if @errors %>
+  <%= erb :_error, :locals => {errors: @errors }%>
+  <% end %>
+ 
   <h1>Welcome</h1>
  
   <p class="create_user">
