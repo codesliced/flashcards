@@ -6,6 +6,7 @@ get '/' do
   end
 end
 
+
 get '/available_decks' do
   @decks = Deck.get_all_decks
 erb :am_test
@@ -29,3 +30,5 @@ end
 #   guess = params[:guess]
 #   Guess.enter_answer(guess)
 # end
+
+

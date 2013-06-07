@@ -19,21 +19,21 @@
 </head>
 <body>
 
-   <div class='header'>
-    <div class='nav'>
-    <a href='/'>Home</a>
+<div class='header'>
+  <div class='nav'>
+    <div id='nav-title'>Deckster</div>
     <%if current_user%>
-    <a>Welcome <%=current_user.first_name%></a>
-    <a href='/logout'>Logout</a>
-    
+      <a>Welcome <%=current_user.first_name%></a>
+      <a href='/logout'>Logout</a> 
     <%else%>
-    <a href='/login'>Login/Create</a>
-    
+      <a href='/login'> &bull; Login &bull; Sign up</a>
     <%end%>
-    <div>
+    <a href='/'>Home</a>
   </div>
-  
-  <%= yield %>
+</div>
+
+<%= yield %>
+
 </body>
 </html>
 
