@@ -10,11 +10,14 @@ post '/create_user' do
 
 end
 
-get '/login' do
+get '/login' do 
+  puts request.class
+  puts request.inspect
   erb :login
 end
 
 post '/login' do
+  puts request.inspect
   @user = User.authenticate(params[:user])
   if @user
      session[:user_id] = @user.id
