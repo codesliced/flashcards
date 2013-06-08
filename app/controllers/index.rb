@@ -25,25 +25,22 @@ end
 post '/new_card/:answer' do
   answer = params[:answer]
   route = params[:route]
-
+  round_id = params[:round_id]
+  Guess.create(:answer => answer, :round_id => round_id)
   redirect to route
 end
 
 get '/user/:id' do
-
+  
 erb :user_profile
 end
 
 
 get '/initiate_new_game' do
   round = Round.create(:deck_id => params[:id])
-
-  redirect to "/game/#{round.id}/#{params[:id]}"
+  redirect to "/game/#{round.id}/#{params[:id]}?card_id=0&card_side=back"
 end
 
-# post '/submit_answer' do
-#   guess = params[:guess]
-#   Guess.enter_answer(guess)
-# end
+
 
 

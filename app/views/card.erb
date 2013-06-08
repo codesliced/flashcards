@@ -26,11 +26,13 @@
   <% end %>
 
   <form action="/new_card/true" method="post">
+    <input type="hidden" value="<%= @round_id%>" name="round_id">
     <input type="hidden" value="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
     <input type="submit" value="Right" class='button green' id='flip-card'>
   </form>
 
   <form action="/new_card/false" method="post">
+    <input type="hidden" value="<%= @round_id%>" name="round_id">
     <input type="hidden" value="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
     <input type="submit" value="Wrong" class='button red' id='flip-card'>
   </form>
