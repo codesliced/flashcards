@@ -4,14 +4,35 @@
 
 <div id='card'>
   <div id='card-content'>
-    <p><%= @card.front %>dfgd fdfg asdfsdf sdf sd sddf sdf alskdjf;as kjdf;laskdjf;lak sjdf;a;slkddfksd  kdjf</p>
+    <% if @card_side == "back" %>
+      <p><%= @card.back %></p>
+    <% else %>
+      <p><%= @card.front %></p>
+    <% end %>
   </div>
 </div>
 
 
-<div id='card-nav'>
-  <a href="#" class='button' id='flip-card'>Flip Card</a>
-  <a href="#" class='button green' id='flip-card'>Right!</a>
-  <a href="#" class='button red' id='flip-card'>Wrong :-(</a>
-</div>
 
+<% if @game_over %>
+<a href="/user/<%=current_user.id%>">stats</a>
+<% else %>
+<div id='card-nav'>
+  
+  <% if @card_side == "back" %>
+    <a href="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card%>&card_side=front" class='button' id='flip-card'>Flip Card</a>
+  <% else %>
+    <a href="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card%>&card_side=back" class='button' id='flip-card'>Flip Card</a>
+  <% end %>
+
+  <form action="/new_card/true" method="post">
+    <input type="hidden" value="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
+    <input type="submit" value="Right" class='button green' id='flip-card'>
+  </form>
+
+  <form action="/new_card/false" method="post">
+    <input type="hidden" value="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
+    <input type="submit" value="Wrong" class='button red' id='flip-card'>
+  </form>
+</div>
+<% end %>

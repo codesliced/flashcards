@@ -1,5 +1,5 @@
 <h1> YOOOO </h1>
 <%= current_user.first_name %>
 <% @decks.each do |d| %>
-<p><%= d.name %></p>
+<a href="/initiate_new_game?id=<%= d.id %>"><%= d.name %></a>
 <% end %>
