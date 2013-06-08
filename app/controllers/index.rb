@@ -9,7 +9,7 @@ end
 
 get '/available_decks' do
   @decks = Deck.get_all_decks
-erb :am_test
+erb :all_decks
 end
 
 get '/game/:round_id/:deck_id' do
@@ -30,14 +30,15 @@ post '/new_card/:answer' do
   redirect to route
 end
 
-get '/user/:id' do
-  
+get '/user/:user_id' do
+    user_id = params[:user_id]
+    @rounds = User.get_rounds_by_user_id(user_id.to_i)
 erb :user_profile
 end
 
 
 get '/initiate_new_game' do
-  round = Round.create(:deck_id => params[:id])
+  round = Round.create(:deck_id => params[:id], :user_id => params[:user_id])
   redirect to "/game/#{round.id}/#{params[:id]}?card_id=0&card_side=back"
 end
 

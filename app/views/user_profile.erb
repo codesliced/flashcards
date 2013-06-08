@@ -1,1 +1,13 @@
-Your stats
+<h1>Your stats</h1>
+<h2>Hey! <%= current_user.first_name %></h2>
+
+
+
+
+
+<% @rounds.each_with_index do |round, index| %>
+<p>Round <%= index+1 %></p>
+  <p>Number of "True's" - <%= round.guesses.where("answer = 'true'").count %></p>
+  <p>Number of "False's" - <%= round.guesses.where("answer = 'false'").count %></p>
+<% end %>
+

@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
     @user
   end
 
+  def self.get_rounds_by_user_id(user_id)
+    self.find(user_id).rounds
+  end
+
 end
