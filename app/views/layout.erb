@@ -25,7 +25,7 @@
     <div id='nav-title'><a href="/">Deckster</a></div>
     <%if current_user%>
       <a href='/logout'>Logout</a> 
-      <a href="/user/<%=current_user.id%>">Welcome <%=current_user.first_name.capitalize%>!</a>
+      <a href="/user/<%=current_user.id%>">Welcome<%=current_user.first_name.capitalize%>!</a>
 
     <%else%>
       <a href='/login'> Login &bull; Sign up</a>

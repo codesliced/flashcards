@@ -1,3 +1,7 @@
+/** {
+   border: 1px solid red !important;
+}*/
+
 /*.container {
   margin: 20px auto;
   width: 600px;
@@ -15,44 +19,30 @@ th {
 
 }
 
-.header .nav{
+.nav{
   padding-right: 100px;
   color: #fff;
-  padding-left: 20px
+  padding-left: 20px;
+  padding-bottom: 25px;
 }
 
-.header .nav a {
+ .nav a {
   padding-right: 15px;
   float: right;
   line-height: 50px;
   text-decoration: none;
+  color: white;
 }
 
-.header .nav a:visited {
-  color: #fff;
+.nav a:hover {
+  color: gray;
 }
-
-/*.header #nav-title {
-  font-size: 18pt;
-  width: 50%;
-  margin:0;
-  padding: 0;
-  display: inline;
-}*/
 
 
 #nav-title {
   float:left;
   font-size: 24px;
   margin-left: 10px;
-}
-
-#nav-title a:hover {
-  color:gray;
-}
-
-.nav_links a:hover {
-  color: gray;
 }
 
 body, select, input, textarea {  
@@ -73,6 +63,63 @@ body, select, input, textarea {
 th {
   text-align: left;
 }
+
+label {
+  text-align: right;
+}
+
+
+.create_user {
+  width: 80%;
+}
+
+.login {
+  width: 80%;
+}
+
+.create_row1 {
+  margin-bottom:10px;
+}
+
+.create_row2 {
+  margin-bottom:10px;
+}
+
+.create_row3 {
+  margin-bottom:10px;
+}
+
+.create_row4 {
+  margin-bottom:10px;
+}
+
+.create_user input {
+  float: right;
+  margin-left: 10px;
+
+}
+
+.login input {
+  float: right;
+  margin-left: 10px;
+
+}
+
+.signup_container {
+  background-color: #D1D1D1;
+  width:400px;
+  border: 2px #53777A solid;
+  border-radius:10px;
+  margin: 20px auto;
+  padding-left: 75px;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.signup_container h1 {
+  /*color: white;*/
+}
+
 
 #submit_button {
   background-color: #FF9966;
@@ -302,6 +349,49 @@ h3 {
   background-color: #3C3251;
 }
 
+
+#log_in {
+  float: right;
+  background-color: #53777A;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 25px;
+/*  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;*/
+}
+
+#log_in:hover {
+  background-color: #3C3251;
+}
+
+label {
+  margin-right: 5px;
+}
+
+#create {
+  float: right;
+  background-color: #53777A;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+/*  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;*/
+}
+
+#create:hover {
+  background-color: #3C3251;
+}
 
 
 /*.green {
