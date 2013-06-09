@@ -11,24 +11,25 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/animate.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
   <title></title>
 </head>
 <body>
 
 <div class='header'>
   <div class='nav'>
-    <div id='nav-title'>Deckster</div>
+    <div id='nav-title'><a href="/">Deckster</a></div>
     <%if current_user%>
-      <a>Welcome <%=current_user.first_name%></a>
       <a href='/logout'>Logout</a> 
+      <a href="/user/<%=current_user.id%>">Welcome <%=current_user.first_name.capitalize%>!</a>
+
     <%else%>
-      <a href='/login'> &bull; Login &bull; Sign up</a>
+      <a href='/login'> Login &bull; Sign up</a>
     <%end%>
-    <a href='/'>Home</a>
   </div>
 </div>
 

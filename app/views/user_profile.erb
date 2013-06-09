@@ -1,13 +1,18 @@
+<div class="stats_container">
 <h1>Your stats</h1>
-<h2>Hey! <%= current_user.first_name %></h2>
+<h2>Hey <%= current_user.first_name.capitalize %>!</h2>
 
 
 
 
 
 <% @rounds.each_with_index do |round, index| %>
-<p>Round <%= index+1 %></p>
-  <p>Number of "True's" - <%= round.guesses.where("answer = 'true'").count %></p>
-  <p>Number of "False's" - <%= round.guesses.where("answer = 'false'").count %></p>
-<% end %>
+  <div class="border"></div>
+<div class="round">Round <%= index+1 %> - <%=round.deck.name.gsub(/\_/, " ").capitalize%></div>
+  <div class="right">Right: - <%= round.guesses.where("answer = 'true'").count %></div>
+  <div class="wrong">Wrong: - <%= round.guesses.where("answer = 'false'").count %></div>
+  <div class="percent"></div>
 
+<% end %>
+</div>
+</div>

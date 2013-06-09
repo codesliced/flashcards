@@ -1,13 +1,11 @@
 post '/create_user' do
-  new_user = User.new(params[:user])
-  if new_user.save 
-    session[:user_id] = new_user.id
-    redirect '/'
+  @user =User.new(params[:user])
+  if @user.save
+    session[:user_id] = @user.id 
+    redirect to '/available_decks'
   else
-    @errors = new_user.errors
-    erb :login
+    redirect to '/'
   end
-
 end
 
 get '/login' do 
@@ -17,14 +15,12 @@ get '/login' do
 end
 
 post '/login' do
-  puts request.inspect
-  @user = User.authenticate(params[:user])
-  if @user
-     session[:user_id] = @user.id
+  @user = User.find_by_email(params[:user][:email])
+  if @user && @user.password == params([:user][:password])
+    session[:user_id] = @user.id 
+    redirect to '/available_decks'
+  else 
     redirect to '/'
-  else
-    @errors = { login_error: "Invalid Login"}
-    erb :login
   end
 end
 
@@ -33,3 +29,4 @@ get '/logout' do
   session[:user_id] = nil
   redirect to '/'
 end
+

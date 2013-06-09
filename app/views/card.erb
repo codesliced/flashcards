@@ -1,5 +1,5 @@
 <div id='deck-name'>
-  <h2><%= @card.deck.name.capitalize %></h2>
+  <h2><%= @card.deck.name.gsub(/\_/, " ").capitalize %></h2>
 </div>
 
 <div id='card'>
@@ -20,21 +20,21 @@
 <div id='card-nav'>
   
   <% if @card_side == "back" %>
-    <a href="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card%>&card_side=front" class='button' id='flip-card'>Flip Card</a>
+    <a href="/game/<%=round_id%>/<%=@deck.id%>?card_id=<%=@current_card%>&card_side=front" class='button' id='flip_back'>Flip Card</a>
   <% else %>
-    <a href="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card%>&card_side=back" class='button' id='flip-card'>Flip Card</a>
+    <a href="/game/<%=round_id%>/<%=@deck.id%>?card_id=<%=@current_card%>&card_side=back" class='button' id='flip_front'>Flip Card</a>
   <% end %>
 
   <form action="/new_card/true" method="post">
-    <input type="hidden" value="<%= @round_id%>" name="round_id">
-    <input type="hidden" value="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
-    <input type="submit" value="Right" class='button green' id='flip-card'>
+    <input type="hidden" value="<%= round_id%>" name="round_id">
+    <input type="hidden" value="/game/<%=round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
+    <input type="submit" value="Right" id='btn_right'>
   </form>
 
   <form action="/new_card/false" method="post">
-    <input type="hidden" value="<%= @round_id%>" name="round_id">
-    <input type="hidden" value="/game/<%=@round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
-    <input type="submit" value="Wrong" class='button red' id='flip-card'>
+    <input type="hidden" value="<%= round_id%>" name="round_id">
+    <input type="hidden" value="/game/<%=round_id%>/<%=@deck.id%>?card_id=<%=@current_card + 1%>&card_side=back" name="route">
+    <input type="submit" value="Wrong" id='btn_wrong'>
   </form>
 </div>
 <% end %>

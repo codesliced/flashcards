@@ -1,7 +1,13 @@
  $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+    
+});
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+$("#flip_card").click(function(e) {
+  e.preventDefault();
+  var url = $(this).attr("href")
+  $.get(url, function(response) {
+    var new_card_text = $(response).find("#card_content")
+    replace current card_content with new_card_text
+  });
 });

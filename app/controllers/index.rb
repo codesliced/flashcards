@@ -1,4 +1,4 @@
-get '/' do
+ get '/' do
   if current_user
     redirect to '/available_decks'
   else
@@ -18,8 +18,8 @@ get '/game/:round_id/:deck_id' do
   @card = (Card.get_cards_by_deck(@deck.id))[@current_card]
   @game_over = @current_card >= (@deck.cards.count - 1)
   @card_side = params[:card_side]
-  @round_id = params[:round_id]
-  erb :card
+  # @round_id = params[:round_id]
+  erb :card, :locals => {:round_id => params[:round_id]}
 end
 
 post '/new_card/:answer' do
@@ -33,6 +33,7 @@ end
 get '/user/:user_id' do
     user_id = params[:user_id]
     @rounds = User.get_rounds_by_user_id(user_id.to_i)
+    
 erb :user_profile
 end
 

@@ -1,9 +1,9 @@
-.container {
+/*.container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
-}
+}*/
 th {
   text-align: left;
 }
@@ -18,11 +18,11 @@ th {
 .header .nav{
   padding-right: 100px;
   color: #fff;
-  padding-left: 100px
+  padding-left: 20px
 }
 
 .header .nav a {
-  padding-right: 5px;
+  padding-right: 15px;
   float: right;
   line-height: 50px;
   text-decoration: none;
@@ -32,12 +32,27 @@ th {
   color: #fff;
 }
 
-.header #nav-title {
+/*.header #nav-title {
   font-size: 18pt;
   width: 50%;
   margin:0;
   padding: 0;
   display: inline;
+}*/
+
+
+#nav-title {
+  float:left;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+#nav-title a:hover {
+  color:gray;
+}
+
+.nav_links a:hover {
+  color: gray;
 }
 
 body, select, input, textarea {  
@@ -78,13 +93,89 @@ img {
 
 
 h1, h2 {
-  text-align: center;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 h3 {
   font-family: Helvetica, Arial, sans-serif;
 }
+
+
+.intro_container{
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+.intro_container h3 {
+  text-align: center;
+}
+
+.intro_container a{
+  color: white;
+  text-decoration: none;
+}
+
+.deck_of_cards {
+
+  height: 100px;
+  width: 400px;
+  background-color: #53777A;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top: 50px;
+  font-size:48px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 14px rgba(50, 50, 50, 0.75);
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+
+.deck_of_cards:hover {
+  background-color: rgb(215, 48, 39);
+}
+
+
+.stats_container{
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+.stats_container h3 {
+  text-align: center;
+}
+
+.stats_container a{
+  color: white;
+  text-decoration: none;
+}
+
+.round {
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.right {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.wrong {
+  display: inline-block;
+}
+
+.border {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-top: 1px dotted gray;
+  display: block;
+}
+
 #click{
   font-size: 10px;
   font-style: italic;
@@ -109,6 +200,8 @@ h3 {
   margin:auto; 
   display:table-cell; 
   vertical-align:middle;
+  padding-left:20px;
+  padding-right:20px;
 }
 #card-content p{
    text-align: center;
@@ -130,10 +223,18 @@ h3 {
 
 #deck-name {
   margin-top: 150px;
+  text-align: center;
+}
+
+#deck-name h2 {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 36px;
+  color: rgb(215, 48, 39);
 }
 
 .button {
-  background-color: rgb(69, 117, 180);
+  float: left;
+  background-color: #53777A;
   margin: 20px;
   margin-top: 20px;
   padding-top: 10px;
@@ -142,20 +243,84 @@ h3 {
   padding-right: 30px;
   text-decoration: none;
   color: #fff;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+/*  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;*/
   border-radius: 5px;
-  -webkit-box-shadow: 7px 7px 19px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    7px 7px 19px rgba(50, 50, 50, 0.75);
-  box-shadow:         7px 7px 19px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 2px 2px 12px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    2px 2px 12px rgba(50, 50, 50, 0.75);
+  box-shadow:         2px 2px 12px rgba(50, 50, 50, 0.75);
+  animated
 }
 
-.green {
+.button:hover {
+  background-color: #3C3251;
+}
+
+#btn_right {
+  float: right;
+  background-color: #53777A;
+  margin: 20px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: #fff;
+/*  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;*/
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 12px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    2px 2px 12px rgba(50, 50, 50, 0.75);
+  box-shadow:         2px 2px 12px rgba(50, 50, 50, 0.75);
+}
+
+#btn_right:hover {
+  background-color: #3C3251;
+}
+
+#btn_wrong {
+  float: right;
+  background-color: #53777A;
+  margin: 20px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: #fff;
+/*  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;*/
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 12px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    2px 2px 12px rgba(50, 50, 50, 0.75);
+  box-shadow:         2px 2px 12px rgba(50, 50, 50, 0.75);
+}
+
+#btn_wrong:hover {
+  background-color: #3C3251;
+}
+
+
+
+/*.green {
   background-color: rgb(12, 227, 255); 
 }
 
 .red {
   background-color: rgb(252, 141, 89);
-}
+}*/
 
+
+/*
+
+#FFED90 yellow
+#A8D46F lime
+#359668 green
+#3C3251 light purple
+#341139 deep purple
+
+
+*/
   
