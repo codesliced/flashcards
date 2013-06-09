@@ -166,14 +166,16 @@ h3 {
 }
 
 .deck_of_cards {
-
+  float:left;
   height: 100px;
-  width: 400px;
+  width: 250px;
   background-color: #53777A;
+  /*margin-left:20px;*/
   margin-bottom: 20px;
+  margin-right:10px;
   text-align: center;
   padding-top: 50px;
-  font-size:48px;
+  font-size:30px;
   border-radius: 5px;
   box-shadow: 2px 2px 14px rgba(50, 50, 50, 0.75);
   font-family: 'Sorts Mill Goudy', serif;
@@ -229,10 +231,10 @@ h3 {
 }
 
 #card{
-  width: 680px;
+  width: 600px;
   height: 300px;
   margin:0 auto;
-  border: 1px solid;
+  border: 1px solid #;
   display: table;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -249,10 +251,9 @@ h3 {
   vertical-align:middle;
   padding-left:20px;
   padding-right:20px;
-}
-#card-content p{
    text-align: center;
-   font-size: 30px;
+   font-size: 28px;
+   line-height: 36px;
    font-family: sans-serif;
    padding-right: 40px;
    padding-left: 40px
@@ -264,7 +265,7 @@ h3 {
 #card-nav{
   margin:0 auto;
   padding-top:30px;
-  width: 680px;
+  width: 600px;
   text-align: center;
 }
 

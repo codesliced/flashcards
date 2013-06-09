@@ -5,9 +5,9 @@
 <div id='card'>
   <div id='card-content'>
     <% if @card_side == "back" %>
-      <p><%= @card.back %></p>
+      <%= @card.back %>
     <% else %>
-      <p><%= @card.front %></p>
+      <%= @card.front %>
     <% end %>
   </div>
 </div>
